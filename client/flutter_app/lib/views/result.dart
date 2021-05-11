@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Components/reusable_card.dart';
+import 'package:flutterapp/Components/reuseable_card.dart';
 
-import '../constants.dart';
+import '../Utilities/constants.dart';
 
 class ResultsPage extends StatelessWidget {
   ResultsPage({
@@ -19,7 +19,8 @@ class ResultsPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Expanded(
+          SizedBox(height: 50,),
+          SingleChildScrollView(
             child: Container(
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.bottomLeft,
@@ -45,13 +46,28 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
           ),
+
+
           Card(
-              child: ListTile(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            title: Text("Estimate again"),
-          ))
+            color: Colors.green,
+            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
+            child: ListTile(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              title: Center(
+                child: Text(
+                  'Estimate Again',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 17.0,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
         ],
       ),
     );
